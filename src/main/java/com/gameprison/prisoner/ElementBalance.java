@@ -1,7 +1,7 @@
-package com.gamePrison.prisoner;
+package com.gameprison.prisoner;
 
-import com.gamePrison.astrologyInfluance.BirthChart;
-import com.gamePrison.astrologyInfluance.PlanetList;
+import com.gameprison.astrologyinfluance.BirthChart;
+import com.gameprison.astrologyinfluance.PlanetList;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -58,6 +58,12 @@ public class ElementBalance {
         return ((position >= 120 && position < 150) || (position >= 180 && position < 210) || (position >= 330 && position < 360));
     }
 
+    // Instead of name use enum HavenCelestial
+    // elementStr -> fix name, it is not string, and name doesn't suggest anything
+    // move this action to enum, and then you can remove this method and use it that way:
+    //
+    //
+    // elementStr = name.addValue(elementStr) // fix name to reflect reasons and goals
     private static int buildElementStrengthbyPlanets(String name, int elementStr) {
         switch (name) {
             //"Sun", "Moon", "Mercury", "Venus", "Mars", "Pluto", "Neptune", "Uranus"
@@ -140,17 +146,24 @@ public class ElementBalance {
     private static int fireBalance(BirthChart birthChart) {
         int fireStr = 0;
         int position;
+        // use for each loop for such cases
+        /*
+        for (String planet : PlanetList.planetList) {
+
+        }*/
+
         for (int i = 0; i < PlanetList.planetList.size(); i++) {
 
 
-            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue();
+            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue(); // int Value not necessary
             if (isFirePosition(position)) {
                 fireStr = buildElementStrengthbyPlanets(PlanetList.planetList.get(i), fireStr);
             }
         }
+        // why j < 12 ?? Magic value, it depends from list size. use for each loop
         for (int j = 0; j < 12; j++) {
 
-            position = birthChart.getHousesPosition().getCusps().get(j).intValue();
+            position = birthChart.getHousesPosition().getCusps().get(j).intValue(); // intValue() not necessary
             if (isFirePosition(position)) {
                 fireStr = bulidElementStrengthbyHouses(j, fireStr);
             }

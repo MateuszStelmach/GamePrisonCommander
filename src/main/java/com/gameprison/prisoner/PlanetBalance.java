@@ -1,7 +1,8 @@
-package com.gamePrison.prisoner;
+package com.gameprison.prisoner;
 
 import lombok.Data;
 
+// what is Str?
 public @Data
 class PlanetBalance {
     private int sunStr;

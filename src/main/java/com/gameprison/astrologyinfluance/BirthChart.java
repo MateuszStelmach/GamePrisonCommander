@@ -1,9 +1,10 @@
-package com.gamePrison.astrologyInfluance;
+package com.gameprison.astrologyinfluance;
 
 import cz.kibo.api.astrology.builder.CuspBuilder;
 import cz.kibo.api.astrology.builder.PlanetBuilder;
 import cz.kibo.api.astrology.domain.Cusp;
 import cz.kibo.api.astrology.domain.Planet;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,10 +14,15 @@ import java.util.List;
 import java.util.Random;
 
 
+// As all fields should be accessible, this annotation can be placed on class level, instead on field one
+// You may also use @Data annotation
+//@Getter
+//@Setter
 public class BirthChart {
-    private @Getter
+    // better add annotation in this place
+    @Getter
     @Setter
-    City city;
+    private City city;
     private @Getter
     @Setter
     LocalDateTime birthTime;
@@ -27,10 +33,12 @@ public class BirthChart {
     @Setter
     Cusp housesPosition;
 
+    // not necessary - as it is single constructor
     public BirthChart() {
     }
 
     public BirthChart(City city, LocalDateTime birthTime) {
+        // list not used
         List<String> planetList =
                 Arrays.asList("Sun", "Moon", "Mercury", "Venus", "Mars", "Pluto", "Neptune", "Uranus");
         this.city = city;
@@ -48,6 +56,7 @@ public class BirthChart {
     }
 
 
+    // This doesn't fit to this class - create some util class
     public static LocalDateTime generateBirthTime() {
         int year;
         int month;

@@ -1,4 +1,4 @@
-package com.gamePrison.astrologyInfluance;
+package com.gameprison.astrologyinfluance;
 
 import cz.kibo.api.astrology.domain.Coordinates;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.Random;
 
+// annotations on class level
 public class City {
     private @Getter
     @Setter
@@ -14,7 +15,7 @@ public class City {
     @Setter
     Coordinates coordinates;
 
-
+    // not necessary
     public City() {
     }
 
@@ -24,6 +25,7 @@ public class City {
 
     }
 
+    // moce to some utils class, it doesn't fit to bean class
     public static City generateCity() {
         String cityName = cityName();
         double geoalt = 173; // avg for Poland

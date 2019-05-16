@@ -1,4 +1,4 @@
-package com.gamePrison.prisoner;
+package com.gameprison.prisoner;
 
 import lombok.Data;
 

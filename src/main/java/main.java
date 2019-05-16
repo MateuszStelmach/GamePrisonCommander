@@ -1,6 +1,6 @@
-import com.gamePrison.astrologyInfluance.BirthChart;
-import com.gamePrison.astrologyInfluance.City;
-import com.gamePrison.prisoner.ElementBalance;
+import com.gameprison.astrologyinfluance.BirthChart;
+import com.gameprison.astrologyinfluance.City;
+import com.gameprison.prisoner.ElementBalance;
 import cz.kibo.api.astrology.builder.PlanetBuilder;
 import cz.kibo.api.astrology.builder.TransitBuilder;
 import cz.kibo.api.astrology.domain.Planet;
