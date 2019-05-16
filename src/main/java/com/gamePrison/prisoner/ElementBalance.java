@@ -62,25 +62,29 @@ public class ElementBalance {
         switch (name) {
             //"Sun", "Moon", "Mercury", "Venus", "Mars", "Pluto", "Neptune", "Uranus"
             case "Sun":
-                elementStr = elementStr + 3;
+                elementStr = +3;
                 break;
             case "Moon":
-                elementStr = elementStr + 3;
+                elementStr = +3;
                 break;
             case "Mercury":
-                elementStr = elementStr + 2;
+                elementStr = +2;
                 break;
             case "Venus":
-                elementStr = elementStr + 2;
+                elementStr = +2;
                 break;
             case "Mars":
-                elementStr = elementStr + 2;
+                elementStr = +2;
+                break;
             case "Pluto":
-                elementStr = elementStr + 1;
+                elementStr = +1;
+                break;
             case "Neptune":
-                elementStr = elementStr + 1;
+                elementStr = +1;
+                break;
             case "Uranus":
-                elementStr = elementStr + 1;
+                elementStr = +1;
+                break;
 
 
         }
@@ -89,8 +93,8 @@ public class ElementBalance {
 
     }
 
-    private static int bulidElementStrengthbyHouses(int number, int elementStr) {
-        switch (number) {
+    private static int bulidElementStrengthbyHouses(int houseNumber, int elementStr) {
+        switch (houseNumber) {
             case 0:
                 elementStr += 3;
                 break;
@@ -128,7 +132,7 @@ public class ElementBalance {
                 elementStr += 1;
                 break;
         }
-        
+
         return elementStr;
 
     }
