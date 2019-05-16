@@ -90,19 +90,45 @@ public class ElementBalance {
     }
 
     private static int bulidElementStrengthbyHouses(int number, int elementStr) {
-
-        if (number == 0) elementStr += 3;
-        if (number == 1) elementStr += 2;
-        if (number == 2) elementStr += 1;
-        if (number == 3) elementStr += 3;
-        if (number == 4) elementStr += 2;
-        if (number == 5) elementStr += 1;
-        if (number == 6) elementStr += 3;
-        if (number == 7) elementStr += 2;
-        if (number == 8) elementStr += 1;
-        if (number == 9) elementStr += 3;
-        if (number == 10) elementStr += 2;
-        if (number == 11) elementStr += 1;
+        switch (number) {
+            case 0:
+                elementStr += 3;
+                break;
+            case 1:
+                elementStr += 2;
+                break;
+            case 2:
+                elementStr += 1;
+                break;
+            case 3:
+                elementStr += 3;
+                break;
+            case 4:
+                elementStr += 2;
+                break;
+            case 5:
+                elementStr += 1;
+                break;
+            case 6:
+                elementStr += 3;
+                break;
+            case 7:
+                elementStr += 2;
+                break;
+            case 8:
+                elementStr += 1;
+                break;
+            case 9:
+                elementStr += 3;
+                break;
+            case 10:
+                elementStr += 2;
+                break;
+            case 11:
+                elementStr += 1;
+                break;
+        }
+        
         return elementStr;
 
     }
