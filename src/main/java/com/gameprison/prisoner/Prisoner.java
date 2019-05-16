@@ -1,12 +1,8 @@
-package com.gamePrison.prisoner;
+package com.gameprison.prisoner;
 
-import com.gamePrison.astrologyInfluance.BirthChart;
-import com.gamePrison.astrologyInfluance.City;
-import cz.kibo.api.astrology.domain.Coordinates;
+import com.gameprison.astrologyinfluance.BirthChart;
+import com.gameprison.astrologyinfluance.City;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
-import java.util.Random;
 
 public class Prisoner {
     private int prisonNumber;

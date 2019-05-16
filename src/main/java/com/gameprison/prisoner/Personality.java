@@ -1,5 +1,6 @@
-package com.gamePrison.prisoner;
+package com.gameprison.prisoner;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public class Personality {
@@ -10,6 +11,7 @@ public class Personality {
     private @Getter
     PlanetBalance planetBalance;
 
+    // you can use @AllArgsConstructor
     public Personality(ElementBalance elementBalance, HouseBalance houseBalance, PlanetBalance planetBalance) {
         this.elementBalance = elementBalance;
         this.houseBalance = houseBalance;

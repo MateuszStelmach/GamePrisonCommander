@@ -1,6 +1,6 @@
-package com.gamePrison.AstrologyInfuence;
+package com.gameprison.AstrologyInfuence;
 
-import com.gamePrison.astrologyInfluance.City;
+import com.gameprison.astrologyinfluance.City;
 
 import static org.junit.Assert.*;
 

@@ -1,6 +1,6 @@
-package com.gamePrison.AstrologyInfuence;
+package com.gameprison.AstrologyInfuence;
 
-import com.gamePrison.astrologyInfluance.BirthChart;
+import com.gameprison.astrologyinfluance.BirthChart;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.time.LocalDateTime;
