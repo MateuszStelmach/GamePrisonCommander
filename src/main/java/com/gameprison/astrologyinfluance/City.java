@@ -7,13 +7,12 @@ import lombok.Setter;
 import java.util.Random;
 
 // annotations on class level
+@Getter
+@Setter
 public class City {
-    private @Getter
-    @Setter
-    String cityName;
-    private @Getter
-    @Setter
-    Coordinates coordinates;
+
+    private String cityName;
+    private Coordinates coordinates;
 
     // not necessary
     public City() {

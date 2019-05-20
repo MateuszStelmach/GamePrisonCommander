@@ -9,38 +9,30 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
+import java.util.Random;
 
 // As all fields should be accessible, this annotation can be placed on class level, instead on field one
 // You may also use @Data annotation
-//@Getter
-//@Setter
+@Getter
+@Setter
 public class BirthChart {
     // better add annotation in this place
-    @Getter
-    @Setter
+
     private City city;
-    private @Getter
-    @Setter
+    private
     LocalDateTime birthTime;
-    private @Getter
-    @Setter
+    private
     Planet planetsPosition;
-    private @Getter
-    @Setter
+    private
     Cusp housesPosition;
 
-    // not necessary - as it is single constructor
+
     public BirthChart() {
     }
 
     public BirthChart(City city, LocalDateTime birthTime) {
-        // list not used
-        List<String> planetList =
-                Arrays.asList("Sun", "Moon", "Mercury", "Venus", "Mars", "Pluto", "Neptune", "Uranus");
+
         this.city = city;
         this.birthTime = birthTime;
         this.planetsPosition = new PlanetBuilder(birthTime)

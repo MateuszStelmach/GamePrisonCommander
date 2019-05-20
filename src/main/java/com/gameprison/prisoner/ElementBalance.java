@@ -1,239 +1,81 @@
 package com.gameprison.prisoner;
 
-import com.gameprison.astrologyinfluance.BirthChart;
-import com.gameprison.astrologyinfluance.PlanetList;
+
+import com.gameprison.astrologyinfluance.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
+@Getter
 public class ElementBalance {
 
-    private @Getter
-    @Setter
-    int fireStr;
-    private @Getter
-    @Setter
-    int waterStr;
-    private @Getter
-    @Setter
-    int airStr;
-    private @Getter
-    @Setter
-    int earthStr;
+    private Map<String, Integer> elementBalance;
 
-    private ElementBalance(int fireStr, int waterStr, int airStr, int earthStr) {
-        this.fireStr = fireStr;
-        this.waterStr = waterStr;
-        this.airStr = airStr;
-        this.earthStr = earthStr;
-    }
-
-    public static ElementBalance generateElementBalance(BirthChart birthChart) {
-         /*• Factor with a Light: +4 (each Light)
-• Factor with Mercury, Venus, Mars, the ascendant or midheaven: +3 (each object)
-• Factor with a sign on the 1st 4th  7th or 10th house
-, +3, astral houses +2 mental +1 */
-        int fStr = fireBalance(birthChart);
-        int eStr = earthBalance(birthChart);
-        int aStr = airBalance(birthChart);
-        int wStr = waterBalance(birthChart);
-
-        return new ElementBalance(fStr, eStr, aStr, wStr);
-    }
-
-
-    private static boolean isFirePosition(int position) {
-        return ((position >= 0 && position < 30) || (position >= 90 && position < 120) || (position >= 240 && position < 270));
+    public ElementBalance(BirthChart birthChart) {
+        elementBalance = new HashMap<>();
+        elementBalance = elementBalanceCalc(birthChart);
 
     }
 
-    private static boolean isEarthPosition(int position) {
-        return ((position >= 30 && position < 60) || (position >= 120 && position < 150) || (position >= 270 && position < 300));
-    }
+    private Map<String, Integer> elementBalanceCalc(BirthChart birthChart) {
+        int fireStrength = 0;
+        int airStrength = 0;
+        int waterStrength = 0;
+        int earthStrength = 0;
 
-    private static boolean isAirPosition(int position) {
-        return ((position >= 90 && position < 120) || (position >= 150 && position < 180) || (position >= 300 && position < 330));
-    }
-
-    private static boolean isWaterPosition(int position) {
-        return ((position >= 120 && position < 150) || (position >= 180 && position < 210) || (position >= 330 && position < 360));
-    }
-
-    // Instead of name use enum HavenCelestial
-    // elementStr -> fix name, it is not string, and name doesn't suggest anything
-    // move this action to enum, and then you can remove this method and use it that way:
-    //
-    //
-    // elementStr = name.addValue(elementStr) // fix name to reflect reasons and goals
-    private static int buildElementStrengthbyPlanets(String name, int elementStr) {
-        switch (name) {
-            //"Sun", "Moon", "Mercury", "Venus", "Mars", "Pluto", "Neptune", "Uranus"
-            case "Sun":
-                elementStr = +3;
-                break;
-            case "Moon":
-                elementStr = +3;
-                break;
-            case "Mercury":
-                elementStr = +2;
-                break;
-            case "Venus":
-                elementStr = +2;
-                break;
-            case "Mars":
-                elementStr = +2;
-                break;
-            case "Pluto":
-                elementStr = +1;
-                break;
-            case "Neptune":
-                elementStr = +1;
-                break;
-            case "Uranus":
-                elementStr = +1;
-                break;
-
-
-        }
-        return elementStr;
-
-
-    }
-
-    private static int bulidElementStrengthbyHouses(int houseNumber, int elementStr) {
-        switch (houseNumber) {
-            case 0:
-                elementStr += 3;
-                break;
-            case 1:
-                elementStr += 2;
-                break;
-            case 2:
-                elementStr += 1;
-                break;
-            case 3:
-                elementStr += 3;
-                break;
-            case 4:
-                elementStr += 2;
-                break;
-            case 5:
-                elementStr += 1;
-                break;
-            case 6:
-                elementStr += 3;
-                break;
-            case 7:
-                elementStr += 2;
-                break;
-            case 8:
-                elementStr += 1;
-                break;
-            case 9:
-                elementStr += 3;
-                break;
-            case 10:
-                elementStr += 2;
-                break;
-            case 11:
-                elementStr += 1;
-                break;
-        }
-
-        return elementStr;
-
-    }
-
-    private static int fireBalance(BirthChart birthChart) {
-        int fireStr = 0;
-        int position;
-        // use for each loop for such cases
-        /*
-        for (String planet : PlanetList.planetList) {
-
-        }*/
-
-        for (int i = 0; i < PlanetList.planetList.size(); i++) {
-
-
-            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue(); // int Value not necessary
-            if (isFirePosition(position)) {
-                fireStr = buildElementStrengthbyPlanets(PlanetList.planetList.get(i), fireStr);
+        for (HeavenCelestial planet : HeavenCelestial.values()) {
+            int position = birthChart.getPlanetsPosition().getPlanets().get(planet.getName()).get(0).intValue();
+            switch (whatElement(position)) {
+                case FIRE:
+                    fireStrength += planet.getValueToAdd();
+                    break;
+                case AIR:
+                    airStrength += planet.getValueToAdd();
+                    break;
+                case WATER:
+                    waterStrength += planet.getValueToAdd();
+                    break;
+                case EARTH:
+                    earthStrength += planet.getValueToAdd();
+                    break;
             }
         }
-        // why j < 12 ?? Magic value, it depends from list size. use for each loop
-        for (int j = 0; j < 12; j++) {
 
-            position = birthChart.getHousesPosition().getCusps().get(j).intValue(); // intValue() not necessary
-            if (isFirePosition(position)) {
-                fireStr = bulidElementStrengthbyHouses(j, fireStr);
+        for (Houses houses : Houses.values()) {
+            int position = birthChart.getHousesPosition().getCusps().get(houses.getName()).intValue();
+            switch (whatElement(position)) {
+                case FIRE:
+                    fireStrength += houses.getValueToAdd();
+                    break;
+                case AIR:
+                    airStrength += houses.getValueToAdd();
+                    break;
+                case WATER:
+                    waterStrength += houses.getValueToAdd();
+                    break;
+                case EARTH:
+                    earthStrength += houses.getValueToAdd();
+                    break;
             }
         }
-        return fireStr;
+        elementBalance.put(FourElements.FIRE.name(), fireStrength);
+        elementBalance.put(FourElements.AIR.name(), airStrength);
+        elementBalance.put(FourElements.WATER.name(), waterStrength);
+        elementBalance.put(FourElements.EARTH.name(), earthStrength);
+        return elementBalance;
     }
 
-    private static int earthBalance(BirthChart birthChart) {
-        int earthStr = 0;
-        int position;
-
-        for (int i = 0; i < PlanetList.planetList.size(); i++) {
-
-            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue();
-            if (isEarthPosition(position)) {
-                earthStr = buildElementStrengthbyPlanets(PlanetList.planetList.get(i), earthStr);
-
-            }
-        }
-        for (int j = 0; j < 12; j++) {
-            position = birthChart.getHousesPosition().getCusps().get(j).intValue();
-            if (isEarthPosition(position)) {
-                earthStr = bulidElementStrengthbyHouses(j, earthStr);
-
-            }
-        }
-        return earthStr;
+    private FourElements whatElement(int position) {
+        if (ZodiacSign.ARIES.getDegree().contains(position) || ZodiacSign.lEO.getDegree().contains(position)
+                || ZodiacSign.SIGGITARIUS.getDegree().contains(position)) return FourElements.FIRE;
+        if (ZodiacSign.GEMINI.getDegree().contains(position) || ZodiacSign.LIBRA.getDegree().contains(position)
+                || ZodiacSign.AQUARIUS.getDegree().contains(position)) return FourElements.AIR;
+        if (ZodiacSign.CANCER.getDegree().contains(position) || ZodiacSign.SCORPIO.getDegree().contains(position)
+                || ZodiacSign.PICES.getDegree().contains(position)) return FourElements.WATER;
+        if (ZodiacSign.TAURUS.getDegree().contains(position) || ZodiacSign.VIRGO.getDegree().contains(position)
+                || ZodiacSign.CAPRICORN.getDegree().contains(position)) return FourElements.EARTH;
+        throw new IllegalArgumentException("position need to be 0-359 degree int");
     }
-
-    private static int airBalance(BirthChart birthChart) {
-        int airStr = 0;
-        int position;
-
-
-        for (int i = 0; i < PlanetList.planetList.size(); i++) {
-            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue();
-            if (isAirPosition(position)) {
-                airStr = buildElementStrengthbyPlanets(PlanetList.planetList.get(i), airStr);
-
-            }
-        }
-        for (int j = 0; j < 12; j++) {
-            position = birthChart.getHousesPosition().getCusps().get(j).intValue();
-            if (isAirPosition(position)) {
-                airStr = bulidElementStrengthbyHouses(j, airStr);
-
-            }
-        }
-        return airStr;
-    }
-
-    private static int waterBalance(BirthChart birthChart) {
-        int waterStr = 0;
-        int position;
-
-        for (int i = 0; i < PlanetList.planetList.size(); i++) {
-            position = birthChart.getPlanetsPosition().getPlanets().get(PlanetList.planetList.get(i)).get(0).intValue();
-            if (isWaterPosition(position)) {
-                waterStr = buildElementStrengthbyPlanets(PlanetList.planetList.get(i), waterStr);
-            }
-        }
-        for (int j = 0; j < 12; j++) {
-            position = birthChart.getHousesPosition().getCusps().get(j).intValue();
-            if (isWaterPosition(position)) {
-                waterStr = bulidElementStrengthbyHouses(j, waterStr);
-
-            }
-        }
-        return waterStr;
-    }
-
-
 }
