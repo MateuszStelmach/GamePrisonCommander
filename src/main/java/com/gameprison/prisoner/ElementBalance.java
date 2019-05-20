@@ -10,7 +10,7 @@ import java.util.Map;
 @Getter
 public class ElementBalance {
 
-    private Map<String, Integer> elementBalance;
+    private Map<FourElements, Integer> elementBalance;
 
     public ElementBalance(BirthChart birthChart) {
         elementBalance = new HashMap<>();
@@ -23,18 +23,18 @@ public class ElementBalance {
         for (HeavenCelestial planet : HeavenCelestial.values()) {
             int position = birthChart.getPlanetPositionInt(planet.getName());
             FourElements whatElement = FourElements.whatElement(position);
-            int strength = elementBalance.getOrDefault(whatElement.name(), 0);
+            int strength = elementBalance.getOrDefault(whatElement, 0);
             strength += planet.getValueToAdd();
-            elementBalance.put(whatElement.name(), strength);
+            elementBalance.put(whatElement, strength);
 
         }
 
         for (Houses houses : Houses.values()) {
             int position = birthChart.getHousePositionInt(houses.getPositionNumber());
             FourElements whatElement = FourElements.whatElement(position);
-            int strength = elementBalance.getOrDefault(whatElement.name(), 0);
+            int strength = elementBalance.getOrDefault(whatElement, 0);
             strength += houses.getValueToAdd();
-            elementBalance.put(whatElement.name(), strength);
+            elementBalance.put(whatElement, strength);
         }
 
     }

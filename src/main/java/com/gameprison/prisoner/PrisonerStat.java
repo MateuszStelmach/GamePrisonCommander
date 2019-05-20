@@ -1,16 +1,12 @@
 package com.gameprison.prisoner;
 
 import lombok.Data;
+import lombok.Getter;
 
-public @Data
-class PrisonerStat {
-    private int agression;
-    private int subordination;
-    private int health;
-    private int mentalCondition;
-    private int sexDrive;
-    private int wealth;
-    private int familyBonds;
+import java.util.Map;
 
+@Getter
+public class PrisonerStat {
+    private Map<CharacterQuality, Integer> prisonerStat;
 }
 

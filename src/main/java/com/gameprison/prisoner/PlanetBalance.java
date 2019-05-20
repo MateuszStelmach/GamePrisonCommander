@@ -1,17 +1,15 @@
 package com.gameprison.prisoner;
 
-import lombok.Data;
 
-// what is Str?
-public @Data
+import com.gameprison.astrologyinfluance.HeavenCelestial;
+import lombok.Getter;
+
+import java.util.Map;
+
+
+@Getter
 class PlanetBalance {
-    private int sunStr;
-    private int moonStr;
-    private int venusStr;
-    private int jupiterStr;
-    private int marsStr;
-    private int mercuryStr;
-    private int saturnStr;
+    private Map<HeavenCelestial, Integer> planetBalance;
 
 
 }

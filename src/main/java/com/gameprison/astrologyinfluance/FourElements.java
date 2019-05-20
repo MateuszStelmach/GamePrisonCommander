@@ -35,8 +35,8 @@ public enum FourElements {
     };
 
     @Getter
-    private final String quality;
     private final String name;
+    private final String quality;
 
     public abstract boolean containsElement(int position);
 

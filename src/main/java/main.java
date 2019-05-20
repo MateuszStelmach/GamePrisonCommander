@@ -1,10 +1,11 @@
 import com.gameprison.astrologyinfluance.BirthChart;
-import com.gameprison.astrologyinfluance.City;
+
 import com.gameprison.astrologyinfluance.FourElements;
+import com.gameprison.astrologyinfluance.GenerateData;
 import com.gameprison.prisoner.ElementBalance;
-import cz.kibo.api.astrology.builder.PlanetBuilder;
+
 import cz.kibo.api.astrology.builder.TransitBuilder;
-import cz.kibo.api.astrology.domain.Planet;
+
 import cz.kibo.api.astrology.domain.Transit;
 
 import java.time.LocalDateTime;
@@ -38,10 +39,10 @@ public class main {
         }
         tranistList.iterator().forEachRemaining(System.out::println);
 
-        BirthChart birthChart = new BirthChart(City.generateCity(), BirthChart.generateBirthTime());
+        BirthChart birthChart = new BirthChart(GenerateData.generateCity(), GenerateData.generateBirthTime());
         ElementBalance elementBalance = new ElementBalance(birthChart);
         for (FourElements value : FourElements.values()) {
-            System.out.println(elementBalance.getElementBalance().get(value.name()) + " " + value.name());
+            System.out.println(elementBalance.getElementBalance().get(value) + " " + value.name());
         }
 
 
