@@ -40,11 +40,10 @@ public class main {
         City city = City.generateCity();
         BirthChart birthChart = new BirthChart(city, BirthChart.generateBirthTime());
         ElementBalance elementBalance = new ElementBalance(birthChart);
-        System.out.println(elementBalance.getElementBalance().get(FourElements.FIRE.name()) + " fire");
-        System.out.println(elementBalance.getElementBalance().get(FourElements.AIR.name()) + " air");
-        System.out.println(elementBalance.getElementBalance().get(FourElements.WATER.name()) + " water");
-        System.out.println(elementBalance.getElementBalance().get(FourElements.EARTH.name()) + " earth");
-
+        for (FourElements value : FourElements.values()) {
+            System.out.println(elementBalance.getElementBalance().get(value.name()) + " " + value.name());
+        }
+        
 
     }
 
