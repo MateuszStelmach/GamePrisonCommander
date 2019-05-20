@@ -37,13 +37,13 @@ public class main {
 
         }
         tranistList.iterator().forEachRemaining(System.out::println);
-        City city = City.generateCity();
-        BirthChart birthChart = new BirthChart(city, BirthChart.generateBirthTime());
+
+        BirthChart birthChart = new BirthChart(City.generateCity(), BirthChart.generateBirthTime());
         ElementBalance elementBalance = new ElementBalance(birthChart);
         for (FourElements value : FourElements.values()) {
             System.out.println(elementBalance.getElementBalance().get(value.name()) + " " + value.name());
         }
-        
+
 
     }
 
