@@ -47,6 +47,14 @@ public class BirthChart {
 
     }
 
+    public int getPlanetPositionInt(String planetName) {
+        return this.getPlanetsPosition().getPlanets().get(planetName).get(0).intValue();
+    }
+
+    public int getHousePositionInt(int positionNumber) {
+        return this.getHousesPosition().getCusps().get(positionNumber).intValue();
+    }
+
 
     // This doesn't fit to this class - create some util class
     public static LocalDateTime generateBirthTime() {

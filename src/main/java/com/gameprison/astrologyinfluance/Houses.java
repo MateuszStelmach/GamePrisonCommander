@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum Houses {
-    FIRST(0, 3, "ego"), // name of house is house number h -1, becouse it is the way AstrologyApi list
+    FIRST(0, 3, "ego"), //positionNumber  of house is house number h -1, becouse it is the way AstrologyApi list
     SECOND(1, 2, "wealth"),// houses in function getCupsPosition
     THIRD(2, 1, "communication"),
     FOURTH(3, 3, "family bound"),
@@ -20,7 +20,7 @@ public enum Houses {
     TWELFTH(11, 1, "enemies");
 
 
-    private final int name;
+    private final int positionNumber;
     private final int valueToAdd;
     private final String quality;
 
