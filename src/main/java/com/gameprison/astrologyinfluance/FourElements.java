@@ -3,34 +3,45 @@ package com.gameprison.astrologyinfluance;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Arrays;
+
+
 @AllArgsConstructor
 public enum FourElements {
     FIRE("fire", "will") {
         @Override
         public boolean containsElement(int position) {
-            return (ZodiacSign.ARIES.getDegree().contains(position) || ZodiacSign.lEO.getDegree().contains(position)
-                    || ZodiacSign.SIGGITARIUS.getDegree().contains(position));
+            return Arrays.stream(ZodiacSign.values())
+                    .filter(zodiacSign -> zodiacSign.isInSign(position))
+                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(FIRE));
+
         }
     },
     AIR("air", "intellect") {
         @Override
         public boolean containsElement(int position) {
-            return ZodiacSign.GEMINI.getDegree().contains(position) || ZodiacSign.LIBRA.getDegree().contains(position)
-                    || ZodiacSign.AQUARIUS.getDegree().contains(position);
+            return Arrays.stream(ZodiacSign.values())
+                    .filter(zodiacSign -> zodiacSign.isInSign(position))
+                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(AIR));
+
         }
     },
     WATER("water", "emotions") {
         @Override
         public boolean containsElement(int position) {
-            return ZodiacSign.CANCER.getDegree().contains(position) || ZodiacSign.SCORPIO.getDegree().contains(position)
-                    || ZodiacSign.PICES.getDegree().contains(position);
+            return Arrays.stream(ZodiacSign.values())
+                    .filter(zodiacSign -> zodiacSign.isInSign(position))
+                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(WATER));
+
         }
     },
     EARTH("earth", "material") {
         @Override
         public boolean containsElement(int position) {
-            return ZodiacSign.TAURUS.getDegree().contains(position) || ZodiacSign.VIRGO.getDegree().contains(position)
-                    || ZodiacSign.CAPRICORN.getDegree().contains(position);
+            return Arrays.stream(ZodiacSign.values())
+                    .filter(zodiacSign -> zodiacSign.isInSign(position))
+                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(EARTH));
+
         }
     };
 
