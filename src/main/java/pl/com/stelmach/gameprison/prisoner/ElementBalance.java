@@ -1,8 +1,12 @@
-package com.gameprison.prisoner;
+package pl.com.stelmach.gameprison.prisoner;
 
 
 import com.gameprison.astrologyinfluance.*;
 import lombok.Getter;
+import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
+import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
+import pl.com.stelmach.gameprison.astrologyinfluance.HeavenCelestial;
+import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 
 import java.util.HashMap;
 import java.util.Map;

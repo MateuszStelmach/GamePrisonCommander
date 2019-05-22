@@ -1,8 +1,8 @@
-import com.gameprison.astrologyinfluance.BirthChart;
+import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 
-import com.gameprison.astrologyinfluance.FourElements;
-import com.gameprison.astrologyinfluance.GenerateData;
-import com.gameprison.prisoner.ElementBalance;
+import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
+import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
+import pl.com.stelmach.gameprison.prisoner.ElementBalance;
 
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 
 import java.util.ArrayList;
 
-import java.util.Arrays;
 import java.util.List;
 
 

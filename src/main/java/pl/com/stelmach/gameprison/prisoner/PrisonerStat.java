@@ -1,6 +1,5 @@
-package com.gameprison.prisoner;
+package pl.com.stelmach.gameprison.prisoner;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.Map;

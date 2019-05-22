@@ -1,4 +1,4 @@
-package com.gameprison.astrologyinfluance;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,13 +7,14 @@ import java.util.Arrays;
 
 
 @AllArgsConstructor
+@Getter
 public enum FourElements {
     FIRE("fire", "will") {
         @Override
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
                     .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(FIRE));
+                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(FIRE));
 
         }
     },
@@ -22,7 +23,7 @@ public enum FourElements {
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
                     .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(AIR));
+                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(AIR));
 
         }
     },
@@ -31,7 +32,7 @@ public enum FourElements {
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
                     .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(WATER));
+                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(WATER));
 
         }
     },
@@ -40,12 +41,12 @@ public enum FourElements {
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
                     .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSingElement().equals(EARTH));
+                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(EARTH));
 
         }
     };
 
-    @Getter
+
     private final String name;
     private final String quality;
 

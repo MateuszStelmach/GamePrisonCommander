@@ -1,13 +1,14 @@
-package com.gameprison.AstrologyInfuence;
+package pl.com.stelmach.gameprison.AstrologyInfuence;
 
-import com.gameprison.astrologyinfluance.City;
+import pl.com.stelmach.gameprison.astrologyinfluance.City;
 
 import static org.junit.Assert.*;
 
+import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import org.junit.Test;
 
 public class CityTest {
-    City city = City.generateCity();
+    City city = GenerateData.generateCity();
 
     @Test
     public void coordinatesTest() {

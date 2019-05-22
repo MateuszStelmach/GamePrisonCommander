@@ -1,4 +1,4 @@
-package com.gameprison.astrologyinfluance;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum Houses {
-    FIRST(0, 3, "ego"), //positionNumber  of house is house number h -1, becouse it is the way AstrologyApi list
+    FIRST(0, 3, "ego"), //positionNumber  of house is house number h -1, becouse it is the way AstrologyApi lists
     SECOND(1, 2, "wealth"),// houses in function getCupsPosition
     THIRD(2, 1, "communication"),
     FOURTH(3, 3, "family bound"),

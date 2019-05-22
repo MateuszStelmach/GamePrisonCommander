@@ -1,13 +1,13 @@
-package com.gameprison.AstrologyInfuence;
+package pl.com.stelmach.gameprison.AstrologyInfuence;
 
-import com.gameprison.astrologyinfluance.BirthChart;
+import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.time.LocalDateTime;
 
 public class BirthChartTest {
 
-    LocalDateTime birthTime = BirthChart.generateBirthTime();
+    LocalDateTime birthTime = GenerateData.generateBirthTime();
     int expected = LocalDateTime.now().getYear() - 18;
     @Test
     public void birthTimeTest(){

@@ -1,6 +1,5 @@
-package com.gameprison.prisoner;
+package pl.com.stelmach.gameprison.prisoner;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public class Personality {

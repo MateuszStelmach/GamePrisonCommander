@@ -1,7 +1,8 @@
-package com.gameprison.prisoner;
+package pl.com.stelmach.gameprison.prisoner;
 
-import com.gameprison.astrologyinfluance.BirthChart;
-import com.gameprison.astrologyinfluance.City;
+import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
+import pl.com.stelmach.gameprison.astrologyinfluance.City;
+import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import lombok.Getter;
 
 public class Prisoner {
@@ -23,8 +24,8 @@ public class Prisoner {
 
     public Prisoner(int prisonNumber) {
         this.prisonNumber = prisonNumber;
-        this.city = City.generateCity();
-        this.birthChart = new BirthChart(this.city, BirthChart.generateBirthTime());
+        this.city = GenerateData.generateCity();
+        this.birthChart = new BirthChart(this.city, GenerateData.generateBirthTime());
     }
 
 

@@ -1,4 +1,4 @@
-package com.gameprison.astrologyinfluance;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

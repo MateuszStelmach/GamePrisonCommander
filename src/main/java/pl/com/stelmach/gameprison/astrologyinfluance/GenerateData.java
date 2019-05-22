@@ -1,4 +1,4 @@
-package com.gameprison.astrologyinfluance;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import cz.kibo.api.astrology.domain.Coordinates;
 

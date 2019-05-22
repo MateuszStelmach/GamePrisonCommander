@@ -1,7 +1,7 @@
-package com.gameprison.prisoner;
+package pl.com.stelmach.gameprison.prisoner;
 
 
-import com.gameprison.astrologyinfluance.Houses;
+import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 import lombok.Getter;
 
 import java.util.Map;
