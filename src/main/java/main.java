@@ -2,12 +2,14 @@ import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 
 import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
+import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
 import pl.com.stelmach.gameprison.prisoner.ElementBalance;
 
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
+import pl.com.stelmach.gameprison.prisoner.HouseBalance;
 import pl.com.stelmach.gameprison.prisoner.PrisonerStat;
 
 import java.time.LocalDateTime;
@@ -50,6 +52,15 @@ public class main {
         PrisonerStat prisonerStat = new PrisonerStat(birthChart);
         for (Map.Entry<CharacterQuality, Integer> entry : prisonerStat.getPrisonerStat().entrySet()) {
             System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
+        }
+
+        for (Object o : birthChart.getHousesPosition().getCusps().toArray()) {
+            System.out.println(o);
+        }
+
+        HouseBalance houseBalance = new HouseBalance(birthChart);
+        for (Map.Entry<Houses, Integer> entry : houseBalance.getHouseBalance().entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
 
