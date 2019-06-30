@@ -2,6 +2,7 @@ package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
 
 import java.util.Arrays;
 
@@ -9,7 +10,7 @@ import java.util.Arrays;
 @AllArgsConstructor
 @Getter
 public enum FourElements {
-    FIRE("fire", "will") {
+    FIRE("fire", CharacterQuality.WILL_POWER) {
         @Override
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
@@ -18,7 +19,7 @@ public enum FourElements {
 
         }
     },
-    AIR("air", "intellect") {
+    AIR("air", CharacterQuality.INTELLECTUAL_CAPACITY) {
         @Override
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
@@ -27,7 +28,7 @@ public enum FourElements {
 
         }
     },
-    WATER("water", "emotions") {
+    WATER("water", CharacterQuality.EMOTIONAL_RESPOSIVENESS) {
         @Override
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
@@ -36,7 +37,7 @@ public enum FourElements {
 
         }
     },
-    EARTH("earth", "material") {
+    EARTH("earth", CharacterQuality.MATERIAL_POSSESSIVENESS) {
         @Override
         public boolean containsElement(int position) {
             return Arrays.stream(ZodiacSign.values())
@@ -48,7 +49,7 @@ public enum FourElements {
 
 
     private final String name;
-    private final String quality;
+    private final CharacterQuality quality;
 
     public abstract boolean containsElement(int position);
 

@@ -1,5 +1,22 @@
 package pl.com.stelmach.gameprison.prisoner;
 
 public enum CharacterQuality {
+    WILL_POWER,
+    INTELLECTUAL_CAPACITY,
+    EMOTIONAL_RESPOSIVENESS,
+    MATERIAL_POSSESSIVENESS,
+    EGO_STRENGTH,
+    HEALTH_STRENGTH,
+    DECEIVING,
+    SEX_DRIVE_POTENTIAL,
+    AGGRESSION,
+    SUBORDINATION,
+    MENTAL_CONDITION,
+    ADDICTION_CAPACITY,
+    LEADERSHIP,
+
+
+
+
 
 }

@@ -1,13 +1,13 @@
 package pl.com.stelmach.gameprison.prisoner;
 
 
-import com.gameprison.astrologyinfluance.*;
 import lombok.Getter;
 import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 import pl.com.stelmach.gameprison.astrologyinfluance.HeavenCelestial;
 import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,14 +23,12 @@ public class ElementBalance {
     }
 
     private void elementBalanceCalc(BirthChart birthChart) {
-
         for (HeavenCelestial planet : HeavenCelestial.values()) {
             int position = birthChart.getPlanetPositionInt(planet.getName());
             FourElements whatElement = FourElements.whatElement(position);
             int strength = elementBalance.getOrDefault(whatElement, 0);
             strength += planet.getValueToAdd();
             elementBalance.put(whatElement, strength);
-
         }
 
         for (Houses houses : Houses.values()) {
@@ -40,8 +38,5 @@ public class ElementBalance {
             strength += houses.getValueToAdd();
             elementBalance.put(whatElement, strength);
         }
-
     }
-
-
 }
