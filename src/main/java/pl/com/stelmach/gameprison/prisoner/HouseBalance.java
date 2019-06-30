@@ -8,7 +8,9 @@ import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 import lombok.Getter;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 @Getter
 public class HouseBalance {
@@ -16,7 +18,7 @@ public class HouseBalance {
     private Map<Houses, Integer> houseBalance;
 
     public HouseBalance(BirthChart birthChart) {
-        houseBalance = new HashMap<>();
+        houseBalance = new TreeMap<>();
         houseBalanceCalc(birthChart);
     }
 
