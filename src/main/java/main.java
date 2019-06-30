@@ -2,17 +2,20 @@ import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 
 import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
+import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
 import pl.com.stelmach.gameprison.prisoner.ElementBalance;
 
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
+import pl.com.stelmach.gameprison.prisoner.PrisonerStat;
 
 import java.time.LocalDateTime;
 
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class main {
@@ -42,6 +45,11 @@ public class main {
         ElementBalance elementBalance = new ElementBalance(birthChart);
         for (FourElements value : FourElements.values()) {
             System.out.println(elementBalance.getElementBalance().get(value) + " " + value.name());
+        }
+
+        PrisonerStat prisonerStat = new PrisonerStat(birthChart);
+        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStat.getPrisonerStat().entrySet()) {
+            System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
         }
 
 
