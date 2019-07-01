@@ -10,7 +10,7 @@ import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
 import pl.com.stelmach.gameprison.person.HouseBalance;
-import pl.com.stelmach.gameprison.person.prisoner.PrisonerStat;
+import pl.com.stelmach.gameprison.person.prisoner.PrisonerStatistic;
 
 import java.time.LocalDateTime;
 
@@ -49,8 +49,8 @@ public class main {
             System.out.println(elementBalance.getElementBalance().get(value) + " " + value.name());
         }
 
-        PrisonerStat prisonerStat = new PrisonerStat(birthChart);
-        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStat.getPrisonerStat().entrySet()) {
+        PrisonerStatistic prisonerStatistic = new PrisonerStatistic(birthChart);
+        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStatistic.getPrisonerStat().entrySet()) {
             System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
         }
 

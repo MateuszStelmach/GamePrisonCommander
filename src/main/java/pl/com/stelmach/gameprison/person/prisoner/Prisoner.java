@@ -11,23 +11,19 @@ import pl.com.stelmach.gameprison.person.Personality;
 public class Prisoner {
     private final int prisonNumber;
 
-    private enum STATUS {
-        GRYPESER,
-        FRAJER,
-        CWEL
-    }
-
-
     private BirthChart birthChart;
     private City city;
     private Personality personality;
     @Setter
-    private PrisonerStat prisonerStat;
+    private PrisonerStatistic prisonerStatistic;
     @Setter
     private PrisonerRelation prisonerRelation;
+    @Setter
+    private PrisonerStatus status;
 
     public Prisoner(int prisonNumber) {
         this.prisonNumber = prisonNumber;
+        this.status = PrisonerStatus.REGULAR;
         this.city = GenerateData.generateCity();
         this.birthChart = new BirthChart(this.city, GenerateData.generateBirthTime());
     }
