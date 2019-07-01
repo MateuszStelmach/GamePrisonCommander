@@ -1,14 +1,12 @@
 package pl.com.stelmach.gameprison.prisoner;
 
 
-import org.apache.commons.lang3.Range;
+
 import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 import pl.com.stelmach.gameprison.astrologyinfluance.HeavenCelestial;
 import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 import lombok.Getter;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 

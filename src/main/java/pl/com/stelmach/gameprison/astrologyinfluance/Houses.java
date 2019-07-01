@@ -131,14 +131,12 @@ public enum Houses {
     };
 
     private static boolean startHouseBiggerThanEndhouse(int houseStart, int houseEnd, int position) {
-        if (Range.closedOpen(houseStart, 360).contains(position) ||
-                Range.closedOpen(0, houseEnd).contains(position)) return true;
-        return false;
+        return (Range.closedOpen(houseStart, 360).contains(position) ||
+                Range.closedOpen(0, houseEnd).contains(position));
     }
 
     private static boolean startHouseSmallerThanEndHouse(int houseStart, int houseEnd, int position) {
-        if (Range.closedOpen(houseStart, houseEnd).contains(position)) return true;
-        else return false;
+        return (Range.closedOpen(houseStart, houseEnd).contains(position));
     }
 
 
