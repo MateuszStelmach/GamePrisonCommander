@@ -24,7 +24,9 @@ public class HouseBalance {
 
     private void houseBalanceCalc(BirthChart birthChart) {
         for (Houses houses : Houses.values()) {
+
             int strength = houseBalance.getOrDefault(houses, 0);
+
             for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
                 int planetPosition = birthChart.getPlanetPositionInt(heavenCelestial.getName());
                 if (houses.isInHouse(birthChart, planetPosition)) {
@@ -33,7 +35,6 @@ public class HouseBalance {
             }
             houseBalance.put(houses, strength);
         }
-
     }
 }
 
