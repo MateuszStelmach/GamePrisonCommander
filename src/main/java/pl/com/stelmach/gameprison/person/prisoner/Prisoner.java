@@ -1,10 +1,11 @@
-package pl.com.stelmach.gameprison.prisoner;
+package pl.com.stelmach.gameprison.person.prisoner;
 
 import lombok.Setter;
 import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 import pl.com.stelmach.gameprison.astrologyinfluance.City;
 import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import lombok.Getter;
+import pl.com.stelmach.gameprison.person.Personality;
 
 @Getter
 public class Prisoner {
@@ -23,7 +24,7 @@ public class Prisoner {
     @Setter
     private PrisonerStat prisonerStat;
     @Setter
-    private PrisonRelation prisonRelation;
+    private PrisonerRelation prisonerRelation;
 
     public Prisoner(int prisonNumber) {
         this.prisonNumber = prisonNumber;

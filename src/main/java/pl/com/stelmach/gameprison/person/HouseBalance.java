@@ -1,4 +1,4 @@
-package pl.com.stelmach.gameprison.prisoner;
+package pl.com.stelmach.gameprison.person;
 
 
 

@@ -3,14 +3,14 @@ import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
-import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
-import pl.com.stelmach.gameprison.prisoner.ElementBalance;
+import pl.com.stelmach.gameprison.person.CharacterQuality;
+import pl.com.stelmach.gameprison.person.ElementBalance;
 
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
-import pl.com.stelmach.gameprison.prisoner.HouseBalance;
-import pl.com.stelmach.gameprison.prisoner.PrisonerStat;
+import pl.com.stelmach.gameprison.person.HouseBalance;
+import pl.com.stelmach.gameprison.person.prisoner.PrisonerStat;
 
 import java.time.LocalDateTime;
 

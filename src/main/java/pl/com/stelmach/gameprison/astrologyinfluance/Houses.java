@@ -4,7 +4,7 @@ import com.google.common.collect.Range;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
+import pl.com.stelmach.gameprison.person.CharacterQuality;
 
 @AllArgsConstructor
 @Getter
