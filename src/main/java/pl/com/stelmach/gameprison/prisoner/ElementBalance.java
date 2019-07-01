@@ -7,7 +7,6 @@ import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 import pl.com.stelmach.gameprison.astrologyinfluance.HeavenCelestial;
 import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
