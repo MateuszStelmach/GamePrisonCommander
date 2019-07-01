@@ -1,8 +1,9 @@
 package pl.com.stelmach.gameprison.astrologyinfluance;
 
+import com.google.common.collect.Range;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.apache.commons.lang3.Range;
+
 import pl.com.stelmach.gameprison.prisoner.CharacterQuality;
 
 @AllArgsConstructor
@@ -12,7 +13,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(0);
-            int houseEnd = birthChart.getHousePositionInt(1) - 1;
+            int houseEnd = birthChart.getHousePositionInt(1);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -22,7 +23,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(1);
-            int houseEnd = birthChart.getHousePositionInt(2) - 1;
+            int houseEnd = birthChart.getHousePositionInt(2);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -32,7 +33,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(2);
-            int houseEnd = birthChart.getHousePositionInt(3) - 1;
+            int houseEnd = birthChart.getHousePositionInt(3);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -42,7 +43,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(3);
-            int houseEnd = birthChart.getHousePositionInt(4) - 1;
+            int houseEnd = birthChart.getHousePositionInt(4);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -52,7 +53,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(4);
-            int houseEnd = birthChart.getHousePositionInt(5) - 1;
+            int houseEnd = birthChart.getHousePositionInt(5);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -62,7 +63,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(5);
-            int houseEnd = birthChart.getHousePositionInt(6) - 1;
+            int houseEnd = birthChart.getHousePositionInt(6);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -72,7 +73,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(6);
-            int houseEnd = birthChart.getHousePositionInt(7) - 1;
+            int houseEnd = birthChart.getHousePositionInt(7);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -82,7 +83,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(7);
-            int houseEnd = birthChart.getHousePositionInt(8) - 1;
+            int houseEnd = birthChart.getHousePositionInt(8);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -92,7 +93,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(8);
-            int houseEnd = birthChart.getHousePositionInt(9) - 1;
+            int houseEnd = birthChart.getHousePositionInt(9);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -102,7 +103,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(9);
-            int houseEnd = birthChart.getHousePositionInt(10) - 1;
+            int houseEnd = birthChart.getHousePositionInt(10);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -112,7 +113,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(10);
-            int houseEnd = birthChart.getHousePositionInt(11) - 1;
+            int houseEnd = birthChart.getHousePositionInt(11);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -122,7 +123,7 @@ public enum Houses {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(11);
-            int houseEnd = birthChart.getHousePositionInt(0) - 1;
+            int houseEnd = birthChart.getHousePositionInt(0);
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
@@ -130,13 +131,13 @@ public enum Houses {
     };
 
     private static boolean startHouseBiggerThanEndhouse(int houseStart, int houseEnd, int position) {
-        if (Range.between(houseStart, 360).contains(position) ||
-                Range.between(0, houseEnd).contains(position)) return true;
+        if (Range.closedOpen(houseStart, 360).contains(position) ||
+                Range.closedOpen(0, houseEnd).contains(position)) return true;
         return false;
     }
 
     private static boolean startHouseSmallerThanEndHouse(int houseStart, int houseEnd, int position) {
-        if (Range.between(houseStart, houseEnd).contains(position)) return true;
+        if (Range.closedOpen(houseStart, houseEnd).contains(position)) return true;
         else return false;
     }
 
