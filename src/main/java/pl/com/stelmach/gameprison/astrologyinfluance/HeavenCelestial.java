@@ -21,4 +21,5 @@ public enum HeavenCelestial {
     private final String name;
     private final int valueToAdd;
     private final CharacterQuality quality;
+
 }

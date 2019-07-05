@@ -8,7 +8,7 @@ import lombok.Getter;
 public class Personality {
     private ElementBalance elementBalance;
     private HouseBalance houseBalance;
-    private PlanetBalance planetBalance;
+    private HeavenCelestialBalance heavenCelestialBalance;
 
 
 }

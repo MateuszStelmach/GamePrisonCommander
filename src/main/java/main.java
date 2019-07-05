@@ -1,13 +1,10 @@
 import pl.com.stelmach.gameprison.astrologyinfluance.*;
 
-import pl.com.stelmach.gameprison.person.CharacterQuality;
-import pl.com.stelmach.gameprison.person.ElementBalance;
+import pl.com.stelmach.gameprison.person.*;
 
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
-import pl.com.stelmach.gameprison.person.HouseBalance;
-import pl.com.stelmach.gameprison.person.ZodiacSignBalance;
 import pl.com.stelmach.gameprison.person.prisoner.PrisonerStatistic;
 
 import java.time.LocalDateTime;
@@ -63,6 +60,10 @@ public class main {
 
         ZodiacSignBalance zodiacSignBalance = new ZodiacSignBalance(birthChart);
         for (Map.Entry<ZodiacSign, Integer> entry : zodiacSignBalance.getZodiacSignBalance().entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        HeavenCelestialBalance heavenCelestialBalance = new HeavenCelestialBalance(birthChart);
+        for (Map.Entry<HeavenCelestial, Integer> entry : heavenCelestialBalance.getHeavenCelestialMap().entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
