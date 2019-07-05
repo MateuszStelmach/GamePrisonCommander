@@ -15,12 +15,12 @@ public class HeavenCelestialBalance {
     public HeavenCelestialBalance(BirthChart birthChart) {
         heavenCelestialMap = new TreeMap<>();
         for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
-            heavenCelestialMap.put(heavenCelestial, heavenCelestialStrength(heavenCelestial, birthChart));
+            heavenCelestialMap.put(heavenCelestial, heavenCelestialCalc(heavenCelestial, birthChart));
         }
 
     }
 
-    private int heavenCelestialStrength(HeavenCelestial heavenCelestial, BirthChart birthChart) {
+    private int heavenCelestialCalc(HeavenCelestial heavenCelestial, BirthChart birthChart) {
         int position = birthChart.getPlanetPositionInt(heavenCelestial.getName());
         int heavenCelestialStrength = 0;
         switch (heavenCelestial) {
