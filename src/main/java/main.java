@@ -44,10 +44,6 @@ public class main {
             System.out.println(elementBalance.getElementBalance().get(value) + " " + value.name());
         }
 
-        PrisonerStatistic prisonerStatistic = new PrisonerStatistic(birthChart);
-        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStatistic.getPrisonerStat().entrySet()) {
-            System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
-        }
 
         for (Object o : birthChart.getHousesPosition().getCusps().toArray()) {
             System.out.println(o);
@@ -65,6 +61,11 @@ public class main {
         HeavenCelestialBalance heavenCelestialBalance = new HeavenCelestialBalance(birthChart);
         for (Map.Entry<HeavenCelestial, Integer> entry : heavenCelestialBalance.getHeavenCelestialMap().entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        PrisonerStatistic prisonerStatistic = new PrisonerStatistic(elementBalance, heavenCelestialBalance, houseBalance, zodiacSignBalance);
+        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStatistic.getPrisonerStat().entrySet()) {
+            System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
         }
 
 
