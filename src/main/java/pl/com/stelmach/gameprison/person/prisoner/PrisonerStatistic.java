@@ -2,8 +2,6 @@ package pl.com.stelmach.gameprison.person.prisoner;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
-import pl.com.stelmach.gameprison.astrologyinfluance.HeavenCelestial;
 import pl.com.stelmach.gameprison.person.*;
 
 import java.util.HashMap;
