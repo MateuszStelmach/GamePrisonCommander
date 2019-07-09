@@ -13,37 +13,26 @@ public enum FourElements {
     FIRE("fire", CharacterQuality.WILL_POWER) {
         @Override
         public boolean containsElement(int position) {
-            return Arrays.stream(ZodiacSign.values())
-                    .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(FIRE));
-
+            return ZodiacSign.ARIES.isInSign(position) || ZodiacSign.lEO.isInSign(position) || ZodiacSign.SIGGITARIUS.isInSign(position);
         }
     },
     AIR("air", CharacterQuality.INTELLECTUAL_CAPACITY) {
         @Override
         public boolean containsElement(int position) {
-            return Arrays.stream(ZodiacSign.values())
-                    .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(AIR));
+            return ZodiacSign.LIBRA.isInSign(position) || ZodiacSign.GEMINI.isInSign(position) || ZodiacSign.AQUARIUS.isInSign(position);
 
         }
     },
     WATER("water", CharacterQuality.EMOTIONAL_RESPOSIVENESS) {
         @Override
         public boolean containsElement(int position) {
-            return Arrays.stream(ZodiacSign.values())
-                    .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(WATER));
-
+            return ZodiacSign.CANCER.isInSign(position) || ZodiacSign.PISCES.isInSign(position) || ZodiacSign.SCORPIO.isInSign(position);
         }
     },
     EARTH("earth", CharacterQuality.MATERIAL_POSSESSIVENESS) {
         @Override
         public boolean containsElement(int position) {
-            return Arrays.stream(ZodiacSign.values())
-                    .filter(zodiacSign -> zodiacSign.isInSign(position))
-                    .anyMatch(zodiacSign -> zodiacSign.getSignElement().equals(EARTH));
-
+            return ZodiacSign.CAPRICORN.isInSign(position) || ZodiacSign.VIRGO.isInSign(position) || ZodiacSign.TAURUS.isInSign(position);
         }
     };
 
@@ -54,9 +43,10 @@ public enum FourElements {
     public abstract boolean containsElement(int position);
 
     public static FourElements whatElement(int position) {
-        for (FourElements element : values()) {
-            if (element.containsElement(position)) return element;
-        }
+        if (FourElements.FIRE.containsElement(position)) return FourElements.FIRE;
+        if (FourElements.AIR.containsElement(position)) return FourElements.AIR;
+        if (FourElements.WATER.containsElement(position)) return FourElements.WATER;
+        if (FourElements.EARTH.containsElement(position)) return FourElements.EARTH;
         throw new IllegalArgumentException("element not found for position, position needs to be 0-359 int");
     }
 }
