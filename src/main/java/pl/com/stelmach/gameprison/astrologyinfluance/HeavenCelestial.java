@@ -16,7 +16,7 @@ public enum HeavenCelestial {
 
             if (fourElements.getName().equals(FourElements.FIRE.getName()))
                 heavenCelestialStrength += 1;
-            if (ZodiacSign.lEO.isInSign(position)) heavenCelestialStrength += 2;
+            if (ZodiacSign.lEO.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.ARIES.isInSign(position)) heavenCelestialStrength += 1;
             if (ZodiacSign.LIBRA.isInSign(position)) heavenCelestialStrength -= 2;
             if (Houses.FIRST.isInHouse(birthChart, position)) heavenCelestialStrength += 2;
@@ -35,7 +35,7 @@ public enum HeavenCelestial {
 
             if (fourElements.getName().equals(FourElements.WATER.getName()))
                 heavenCelestialStrength += 1;
-            if (ZodiacSign.CANCER.isInSign(position)) heavenCelestialStrength += 2;
+            if (ZodiacSign.CANCER.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.TAURUS.isInSign(position)) heavenCelestialStrength += 1;
             if (ZodiacSign.SCORPIO.isInSign(position)) heavenCelestialStrength -= 3;
             if (Houses.SEVENTH.isInHouse(birthChart, position)) heavenCelestialStrength += 2;
@@ -68,6 +68,10 @@ public enum HeavenCelestial {
         public int heavenCelestialStrength(BirthChart birthChart) {
             int position = birthChart.getPlanetPositionInt(VENUS.name);
             int heavenCelestialStrength = 0;
+            FourElements fourElements = FourElements.whatElement(position);
+
+            if (fourElements.getName().equals(FourElements.AIR.getName()))
+                heavenCelestialStrength += 1;
 
             if (ZodiacSign.LIBRA.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.TAURUS.isInSign(position)) heavenCelestialStrength += 3;
@@ -90,7 +94,7 @@ public enum HeavenCelestial {
 
             if (fourElements.getName().equals(FourElements.FIRE.getName()))
                 heavenCelestialStrength += 1;
-            if (ZodiacSign.ARIES.isInSign(position)) heavenCelestialStrength += 2;
+            if (ZodiacSign.ARIES.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.lEO.isInSign(position)) heavenCelestialStrength += 1;
             if (ZodiacSign.CAPRICORN.isInSign(position)) heavenCelestialStrength += 1;
             if (ZodiacSign.SCORPIO.isInSign(position)) heavenCelestialStrength += 3;
@@ -112,6 +116,7 @@ public enum HeavenCelestial {
                 heavenCelestialStrength += 1;
             if (ZodiacSign.PISCES.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.SIGGITARIUS.isInSign(position)) heavenCelestialStrength += 3;
+            if (ZodiacSign.CANCER.isInSign(position)) heavenCelestialStrength += 2;
             if (ZodiacSign.GEMINI.isInSign(position)) heavenCelestialStrength -= 2;
             if (Houses.NINTH.isInHouse(birthChart, position)) heavenCelestialStrength += 3;
             if (Houses.ELEVENTH.isInHouse(birthChart, position)) heavenCelestialStrength += 3;
@@ -123,6 +128,10 @@ public enum HeavenCelestial {
         public int heavenCelestialStrength(BirthChart birthChart) {
             int position = birthChart.getPlanetPositionInt(SATURN.name);
             int heavenCelestialStrength = 0;
+            FourElements fourElements = FourElements.whatElement(position);
+
+            if (fourElements.getName().equals(FourElements.EARTH.getName()))
+                heavenCelestialStrength += 1;
 
             if (ZodiacSign.CAPRICORN.isInSign(position)) heavenCelestialStrength += 3;
             if (ZodiacSign.AQUARIUS.isInSign(position)) heavenCelestialStrength += 3;
