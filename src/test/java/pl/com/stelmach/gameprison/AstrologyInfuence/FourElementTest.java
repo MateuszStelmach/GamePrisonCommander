@@ -1,4 +1,4 @@
-package pl.com.stelmach.gameprison.person;
+package pl.com.stelmach.gameprison.AstrologyInfuence;
 
 import static org.junit.Assert.*;
 

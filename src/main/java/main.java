@@ -1,3 +1,4 @@
+import cz.kibo.api.astrology.domain.Coordinates;
 import pl.com.stelmach.gameprison.astrologyinfluance.*;
 
 import pl.com.stelmach.gameprison.person.*;
@@ -66,6 +67,20 @@ public class main {
         PrisonerStatistic prisonerStatistic = new PrisonerStatistic(elementBalance, heavenCelestialBalance, houseBalance, zodiacSignBalance);
         for (Map.Entry<CharacterQuality, Integer> entry : prisonerStatistic.getPrisonerStat().entrySet()) {
             System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
+        }
+
+        Coordinates coordinates = new Coordinates(50.49, 19.08, 173);
+        LocalDateTime localDateTime = LocalDateTime.of(2000, 1, 1, 10, 0);
+        BirthChart birthChartTest = new BirthChart(new City("Big city", coordinates), localDateTime);
+
+        for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
+            System.out.println(birthChartTest.getPlanetPositionInt(heavenCelestial.getName()) + " " + heavenCelestial.getName());
+
+        }
+
+        System.out.println("/////////////////");
+        for (Houses houses : Houses.values()) {
+            System.out.println(houses + " " + birthChartTest.getHousePositionInt(houses.getPositionNumber()));
         }
 
 
