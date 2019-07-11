@@ -104,8 +104,17 @@ public enum HeavenCelestial {
     JUPITER("Jupiter", 2, CharacterQuality.WILL_POWER) {
         @Override
         public int heavenCelestialStrength(BirthChart birthChart) {
-            int position = birthChart.getPlanetPositionInt(SATURN.name);
+            int position = birthChart.getPlanetPositionInt(JUPITER.name);
             int heavenCelestialStrength = 0;
+            FourElements fourElements = FourElements.whatElement(position);
+
+            if (fourElements.getName().equals(FourElements.FIRE.getName()))
+                heavenCelestialStrength += 1;
+            if (ZodiacSign.PISCES.isInSign(position)) heavenCelestialStrength += 3;
+            if (ZodiacSign.SIGGITARIUS.isInSign(position)) heavenCelestialStrength += 3;
+            if (ZodiacSign.GEMINI.isInSign(position)) heavenCelestialStrength -= 2;
+            if (Houses.NINTH.isInHouse(birthChart, position)) heavenCelestialStrength += 3;
+            if (Houses.ELEVENTH.isInHouse(birthChart, position)) heavenCelestialStrength += 3;
             return heavenCelestialStrength;
         }
     },

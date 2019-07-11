@@ -16,6 +16,4 @@ public class City {
     private String cityName;
     private Coordinates coordinates;
 
-    // moce to some utils class, it doesn't fit to bean class
-
 }
