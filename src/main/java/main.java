@@ -90,6 +90,17 @@ public class main {
             System.out.println(fourElements + " " + testbalance.getElementBalance().get(fourElements));
         }
 
+        HouseBalance testhousebalance = new HouseBalance(birthChartTest);
+        for (Houses houses : Houses.values()) {
+            System.out.println(houses + " " + testhousebalance.getHouseBalance().get(houses));
+        }
+
+        System.out.println("///////////////");
+        HouseBalance testhousebalance2 = new HouseBalance(birthChart);
+        for (Houses houses : Houses.values()) {
+            System.out.println(houses + " " + testhousebalance2.getHouseBalance().get(houses));
+        }
+
 
     }
 

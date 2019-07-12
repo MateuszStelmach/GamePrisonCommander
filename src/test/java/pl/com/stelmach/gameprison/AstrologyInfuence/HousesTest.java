@@ -60,4 +60,20 @@ public class HousesTest {
 
 
     }
+
+    @Test
+    public void houseStrengthTest(){
+        assertEquals(Houses.FIRST.houseStrength(birthChart),2);
+        assertEquals(Houses.SECOND.houseStrength(birthChart),0);
+        assertEquals(Houses.THIRD.houseStrength(birthChart),0);
+        assertEquals(Houses.FOURTH.houseStrength(birthChart),0);
+        assertEquals(Houses.FIFTH.houseStrength(birthChart),0);
+        assertEquals(Houses.SIXTH.houseStrength(birthChart),0);
+        assertEquals(Houses.SEVENTH.houseStrength(birthChart),5);
+        assertEquals(Houses.EIGTH.houseStrength(birthChart),3);
+        assertEquals(Houses.NINTH.houseStrength(birthChart),3);
+        assertEquals(Houses.TENTH.houseStrength(birthChart),2);
+        assertEquals(Houses.ELEVENTH.houseStrength(birthChart),2);
+        assertEquals(Houses.TWELFTH.houseStrength(birthChart),2);
+    }
 }

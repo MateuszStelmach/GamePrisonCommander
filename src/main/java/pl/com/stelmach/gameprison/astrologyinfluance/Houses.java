@@ -18,6 +18,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(FIRST, strength, birthChart);
+            return strength;
+        }
     },
     SECOND(1, 2, CharacterQuality.WEALTH_CAPACITY) {
         @Override
@@ -27,6 +34,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(SECOND, strength, birthChart);
+            return strength;
         }
     },
     THIRD(2, 1, CharacterQuality.COMMUNICATION_SKILLS) {
@@ -38,6 +52,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(THIRD, strength, birthChart);
+            return strength;
+        }
     },
     FOURTH(3, 3, CharacterQuality.FAMILY_BOUND_STRENGTH) {
         @Override
@@ -47,6 +68,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(FOURTH, strength, birthChart);
+            return strength;
         }
     },
     FIFTH(4, 2, CharacterQuality.CHILDREN_POSSESSION) {
@@ -58,6 +86,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(FIFTH, strength, birthChart);
+            return strength;
+        }
     },
     SIXTH(5, 1, CharacterQuality.WORK_ABILITY) {
         @Override
@@ -67,6 +102,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(SIXTH, strength, birthChart);
+            return strength;
         }
     },
     SEVENTH(6, 3, CharacterQuality.MARRIAGE_POTENTIAL) {
@@ -78,6 +120,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(SEVENTH, strength, birthChart);
+            return strength;
+        }
     },
     EIGTH(7, 2, CharacterQuality.DRIVE_TO_CRIME) {
         @Override
@@ -87,6 +136,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(EIGTH, strength, birthChart);
+            return strength;
         }
     },
     NINTH(8, 1, CharacterQuality.EDUCTAION_POTENTIAL) {
@@ -98,6 +154,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(NINTH, strength, birthChart);
+            return strength;
+        }
     },
     TENTH(9, 3, CharacterQuality.SOCIAL_STATUS) {
         @Override
@@ -107,6 +170,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(TENTH, strength, birthChart);
+            return strength;
         }
     },
     ELEVENTH(10, 2, CharacterQuality.FRIENDS_IN_HIGH_PLACES) {
@@ -118,6 +188,13 @@ public enum Houses {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
         }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(ELEVENTH, strength, birthChart);
+            return strength;
+        }
     },
     TWELFTH(11, 1, CharacterQuality.ENEMIES_ATTACKS) {
         @Override
@@ -127,6 +204,13 @@ public enum Houses {
             if (houseStart < houseEnd) {
                 return startHouseSmallerThanEndHouse(houseStart, houseEnd, position);
             } else return startHouseBiggerThanEndhouse(houseStart, houseEnd, position);
+        }
+
+        @Override
+        public int houseStrength(BirthChart birthChart) {
+            int strength = 0;
+            strength = houseStrengthbyHeavenCelestial(TWELFTH, strength, birthChart);
+            return strength;
         }
     };
 
@@ -146,6 +230,17 @@ public enum Houses {
 
     public abstract boolean isInHouse(BirthChart birthChart, int position);
 
+    public abstract int houseStrength(BirthChart birthChart);
+
+    private static int houseStrengthbyHeavenCelestial(Houses houses, int strength, BirthChart birthChart) {
+        for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
+            int planetPosition = birthChart.getPlanetPositionInt(heavenCelestial.getName());
+            if (houses.isInHouse(birthChart, planetPosition)) {
+                strength += heavenCelestial.getValueToAdd();
+            }
+        }
+        return strength;
+    }
 
 }
 

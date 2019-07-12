@@ -15,28 +15,11 @@ public class ZodiacSignBalance {
 
     public ZodiacSignBalance(BirthChart birthChart) {
         zodiacSignBalance = new TreeMap<>();
-        zodiacSingBalanceCalc(birthChart);
-    }
-
-    private void zodiacSingBalanceCalc(BirthChart birthChart) {
         for (ZodiacSign zodiacSign : ZodiacSign.values()) {
-            int signStrength = zodiacSignBalance.getOrDefault(zodiacSign, 0);
-
-            for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
-                int position = birthChart.getPlanetPositionInt(heavenCelestial.getName());
-                if (zodiacSign.isInSign(position)) {
-                    signStrength += heavenCelestial.getValueToAdd();
-                }
-                zodiacSignBalance.put(zodiacSign, signStrength);
-            }
-
-            for (Houses houses : Houses.values()) {
-                int position = birthChart.getHousePositionInt(houses.getPositionNumber());
-                if (zodiacSign.isInSign(position)) {
-                    signStrength += houses.getValueToAdd();
-                }
-                zodiacSignBalance.put(zodiacSign, signStrength);
-            }
+            int zodiacSignStrength = zodiacSign.zodiacSignStrength(birthChart);
+            zodiacSignBalance.put(zodiacSign, zodiacSignStrength);
         }
+
     }
+
 }
