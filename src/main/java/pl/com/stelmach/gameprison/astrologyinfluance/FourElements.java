@@ -16,10 +16,11 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strength = 0;
-            strength = elementStrengthbyPlanet(FIRE, birthChart, strength);
-            strength += FourElements.elementStrengthbyHouses(FIRE, birthChart, strength);
-            return strength;
+            int strengthbyPlanet = 0;
+            int strenghbyHouses = 0;
+            strengthbyPlanet = elementStrengthbyPlanet(FIRE, birthChart, strengthbyPlanet);
+            strenghbyHouses = FourElements.elementStrengthbyHouses(FIRE, birthChart, strenghbyHouses);
+            return strenghbyHouses + strengthbyPlanet;
         }
     },
     AIR("air", CharacterQuality.INTELLECTUAL_CAPACITY) {
@@ -31,10 +32,11 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strength = 0;
-            strength = elementStrengthbyPlanet(AIR, birthChart, strength);
-            strength += FourElements.elementStrengthbyHouses(AIR, birthChart, strength);
-            return strength;
+            int strengthbyPlanet = 0;
+            int strenghbyHouses = 0;
+            strengthbyPlanet = elementStrengthbyPlanet(AIR, birthChart, strengthbyPlanet);
+            strenghbyHouses = FourElements.elementStrengthbyHouses(AIR, birthChart, strenghbyHouses);
+            return strenghbyHouses + strengthbyPlanet;
         }
     },
     WATER("water", CharacterQuality.EMOTIONAL_RESPOSIVENESS) {
@@ -45,10 +47,11 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strength = 0;
-            strength = elementStrengthbyPlanet(WATER, birthChart, strength);
-            strength += FourElements.elementStrengthbyHouses(WATER, birthChart, strength);
-            return strength;
+            int strengthbyPlanet = 0;
+            int strenghbyHouses = 0;
+            strengthbyPlanet = elementStrengthbyPlanet(WATER, birthChart, strengthbyPlanet);
+            strenghbyHouses = FourElements.elementStrengthbyHouses(WATER, birthChart, strenghbyHouses);
+            return strenghbyHouses + strengthbyPlanet;
         }
     },
     EARTH("earth", CharacterQuality.MATERIAL_POSSESSIVENESS) {
@@ -59,10 +62,11 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strength = 0;
-            strength = elementStrengthbyPlanet(EARTH, birthChart, strength);
-            strength += FourElements.elementStrengthbyHouses(EARTH, birthChart, strength);
-            return strength;
+            int strengthbyPlanet = 0;
+            int strenghbyHouses = 0;
+            strengthbyPlanet = elementStrengthbyPlanet(EARTH, birthChart, strengthbyPlanet);
+            strenghbyHouses = FourElements.elementStrengthbyHouses(EARTH, birthChart, strenghbyHouses);
+            return strenghbyHouses + strengthbyPlanet;
         }
     };
 

@@ -83,10 +83,10 @@ public class FourElementTest {
 
     @Test
     public void elementStrengthTest(){
-        assertEquals(fireElement.elementStrength(birthChart),15);
-        assertEquals(airElement.elementStrength(birthChart),13);
-        assertEquals(waterElement.elementStrength(birthChart),13);
-        assertEquals(earthElement.elementStrength(birthChart),21);
+        assertEquals(fireElement.elementStrength(birthChart),10);
+        assertEquals(airElement.elementStrength(birthChart),9);
+        assertEquals(waterElement.elementStrength(birthChart),10);
+        assertEquals(earthElement.elementStrength(birthChart),14);
 
 
     }

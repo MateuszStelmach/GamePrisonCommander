@@ -55,19 +55,6 @@ public class main {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
-        ZodiacSignBalance zodiacSignBalance = new ZodiacSignBalance(birthChart);
-        for (Map.Entry<ZodiacSign, Integer> entry : zodiacSignBalance.getZodiacSignBalance().entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
-        HeavenCelestialBalance heavenCelestialBalance = new HeavenCelestialBalance(birthChart);
-        for (Map.Entry<HeavenCelestial, Integer> entry : heavenCelestialBalance.getHeavenCelestialMap().entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
-
-        PrisonerStatistic prisonerStatistic = new PrisonerStatistic(elementBalance, heavenCelestialBalance, houseBalance, zodiacSignBalance);
-        for (Map.Entry<CharacterQuality, Integer> entry : prisonerStatistic.getPrisonerStat().entrySet()) {
-            System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
-        }
 
         Coordinates coordinates = new Coordinates(50.49, 19.08, 173);
         LocalDateTime localDateTime = LocalDateTime.of(2000, 1, 1, 10, 0);
@@ -99,6 +86,12 @@ public class main {
         HouseBalance testhousebalance2 = new HouseBalance(birthChart);
         for (Houses houses : Houses.values()) {
             System.out.println(houses + " " + testhousebalance2.getHouseBalance().get(houses));
+        }
+
+        System.out.println("////////////");
+        ZodiacSignBalance zodiacSignBalance1 = new ZodiacSignBalance(birthChartTest);
+        for (ZodiacSign zodiacSign : ZodiacSign.values()) {
+            System.out.println(zodiacSign + " " + zodiacSignBalance1.getZodiacSignBalance().get(zodiacSign));
         }
 
 

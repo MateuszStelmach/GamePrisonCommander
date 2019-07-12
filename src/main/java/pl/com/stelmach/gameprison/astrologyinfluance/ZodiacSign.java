@@ -17,8 +17,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(ARIES, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(ARIES, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(ARIES, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -32,8 +31,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(TAURUS, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(TAURUS, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(TAURUS, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -47,8 +45,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(GEMINI, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(GEMINI, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(GEMINI, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -62,8 +59,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(CANCER, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(CANCER, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(CANCER, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -77,8 +73,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(lEO, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(lEO, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(lEO, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -92,8 +87,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(VIRGO, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(VIRGO, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(VIRGO, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -107,8 +101,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(LIBRA, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(LIBRA, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(LIBRA, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -122,8 +115,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(SCORPIO, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(SCORPIO, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(SCORPIO, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -137,8 +129,7 @@ public enum ZodiacSign {
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(SIGGITARIUS, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(SIGGITARIUS, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(SIGGITARIUS, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -151,9 +142,9 @@ public enum ZodiacSign {
 
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
+
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(CAPRICORN, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(CAPRICORN, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(CAPRICORN, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -166,9 +157,9 @@ public enum ZodiacSign {
 
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
+
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(AQUARIUS, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(AQUARIUS, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(AQUARIUS, signStrength, birthChart);
             return signStrength;
         }
     },
@@ -181,9 +172,9 @@ public enum ZodiacSign {
 
         @Override
         public int zodiacSignStrength(BirthChart birthChart) {
+
             int signStrength = 0;
-            signStrength += ZodiacSign.zodiacSignStrengthbyHeavenCelestial(PISCES, signStrength, birthChart);
-            signStrength += ZodiacSign.zodiacSignStrengthbyHouses(PISCES, signStrength, birthChart);
+            signStrength = ZodiacSign.zodiacSingStrength(PISCES, signStrength, birthChart);
             return signStrength;
         }
     };
@@ -218,4 +209,14 @@ public enum ZodiacSign {
         return signStrength;
     }
 
+    private static int zodiacSingStrength(ZodiacSign zodiacSign, int signStrength, BirthChart birthChart) {
+        int signStrengthbyHeavenCelestial = 0;
+        signStrengthbyHeavenCelestial = zodiacSignStrengthbyHeavenCelestial(zodiacSign, signStrengthbyHeavenCelestial, birthChart);
+        int signStrengthbyHouses = 0;
+        signStrengthbyHouses = zodiacSignStrengthbyHouses(zodiacSign, signStrengthbyHouses, birthChart);
+        signStrength = signStrengthbyHeavenCelestial + signStrengthbyHouses;
+        return signStrength;
+    }
 }
+
+
