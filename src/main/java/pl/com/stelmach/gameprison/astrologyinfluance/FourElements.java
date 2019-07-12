@@ -16,11 +16,9 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strengthbyPlanet = 0;
-            int strenghbyHouses = 0;
-            strengthbyPlanet = elementStrengthbyPlanet(FIRE, birthChart, strengthbyPlanet);
-            strenghbyHouses = FourElements.elementStrengthbyHouses(FIRE, birthChart, strenghbyHouses);
-            return strenghbyHouses + strengthbyPlanet;
+            int elementStrength;
+            elementStrength = FourElements.elementStrength(FIRE, birthChart);
+            return elementStrength;
         }
     },
     AIR("air", CharacterQuality.INTELLECTUAL_CAPACITY) {
@@ -32,11 +30,9 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strengthbyPlanet = 0;
-            int strenghbyHouses = 0;
-            strengthbyPlanet = elementStrengthbyPlanet(AIR, birthChart, strengthbyPlanet);
-            strenghbyHouses = FourElements.elementStrengthbyHouses(AIR, birthChart, strenghbyHouses);
-            return strenghbyHouses + strengthbyPlanet;
+            int elementStrength;
+            elementStrength = FourElements.elementStrength(AIR, birthChart);
+            return elementStrength;
         }
     },
     WATER("water", CharacterQuality.EMOTIONAL_RESPOSIVENESS) {
@@ -47,11 +43,9 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strengthbyPlanet = 0;
-            int strenghbyHouses = 0;
-            strengthbyPlanet = elementStrengthbyPlanet(WATER, birthChart, strengthbyPlanet);
-            strenghbyHouses = FourElements.elementStrengthbyHouses(WATER, birthChart, strenghbyHouses);
-            return strenghbyHouses + strengthbyPlanet;
+            int elementStrength;
+            elementStrength = FourElements.elementStrength(WATER, birthChart);
+            return elementStrength;
         }
     },
     EARTH("earth", CharacterQuality.MATERIAL_POSSESSIVENESS) {
@@ -62,11 +56,9 @@ public enum FourElements {
 
         @Override
         public int elementStrength(BirthChart birthChart) {
-            int strengthbyPlanet = 0;
-            int strenghbyHouses = 0;
-            strengthbyPlanet = elementStrengthbyPlanet(EARTH, birthChart, strengthbyPlanet);
-            strenghbyHouses = FourElements.elementStrengthbyHouses(EARTH, birthChart, strenghbyHouses);
-            return strenghbyHouses + strengthbyPlanet;
+            int elementStrength;
+            elementStrength = FourElements.elementStrength(EARTH, birthChart);
+            return elementStrength;
         }
     };
 
@@ -86,7 +78,7 @@ public enum FourElements {
         throw new IllegalArgumentException("element not found for position, position needs to be 0-359 int");
     }
 
-    private static int elementStrengthbyPlanet(FourElements element, BirthChart birthChart, int strength) {
+    private static int elementStrengthbyHeavenCelestial(FourElements element, BirthChart birthChart, int strength) {
         for (HeavenCelestial planet : HeavenCelestial.values()) {
             int position = birthChart.getPlanetPositionInt(planet.getName());
             if (element.containsElement(position)) strength += planet.getValueToAdd();
@@ -100,6 +92,14 @@ public enum FourElements {
             if (element.containsElement(position)) strength += houses.getValueToAdd();
         }
         return strength;
+    }
+
+    private static int elementStrength(FourElements element, BirthChart birthChart) {
+        int elementStrengthByHeavenCelestial = 0;
+        elementStrengthByHeavenCelestial = elementStrengthbyHeavenCelestial(element, birthChart, elementStrengthByHeavenCelestial);
+        int elementStrengthByHouses = 0;
+        elementStrengthByHouses = elementStrengthbyHouses(element, birthChart, elementStrengthByHouses);
+        return elementStrengthByHeavenCelestial + elementStrengthByHouses;
     }
 
 }
