@@ -83,6 +83,13 @@ public class main {
             System.out.println(houses + " " + birthChartTest.getHousePositionInt(houses.getPositionNumber()));
         }
 
+        System.out.println("////////////");
+
+        ElementBalance testbalance = new ElementBalance(birthChartTest);
+        for (FourElements fourElements : FourElements.values()) {
+            System.out.println(fourElements + " " + testbalance.getElementBalance().get(fourElements));
+        }
+
 
     }
 
