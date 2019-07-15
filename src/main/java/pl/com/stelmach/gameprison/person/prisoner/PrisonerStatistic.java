@@ -12,11 +12,10 @@ import java.util.Map;
 public class PrisonerStatistic {
     private Map<CharacterQuality, Integer> prisonerStat;
 
-    public PrisonerStatistic(ElementBalance elementBalance, HeavenCelestialBalance heavenCelestial, HouseBalance houseBalance,
-                             ZodiacSignBalance zodiacSignBalance) {
+    public PrisonerStatistic(Personality personality) {
         prisonerStat = new HashMap<>();
         for (CharacterQuality characterQuality : CharacterQuality.values()) {
-            prisonerStat.put(characterQuality, characterQuality.qualityStrength(elementBalance, heavenCelestial, houseBalance, zodiacSignBalance));
+            prisonerStat.put(characterQuality, characterQuality.qualityStrength(personality));
         }
     }
 
