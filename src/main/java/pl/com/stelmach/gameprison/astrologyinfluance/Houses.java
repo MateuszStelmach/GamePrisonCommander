@@ -145,7 +145,7 @@ public enum Houses {
             return strength;
         }
     },
-    NINTH(8, 1, CharacterQuality.EDUCTAION_POTENTIAL) {
+    NINTH(8, 1, CharacterQuality.EDUCATION_POTENTIAL) {
         @Override
         public boolean isInHouse(BirthChart birthChart, int position) {
             int houseStart = birthChart.getHousePositionInt(8);

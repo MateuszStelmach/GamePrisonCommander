@@ -35,7 +35,7 @@ public enum FourElements {
             return elementStrength;
         }
     },
-    WATER("water", CharacterQuality.EMOTIONAL_RESPOSIVENESS) {
+    WATER("water", CharacterQuality.EMOTIONAL_SENSITIVITY) {
         @Override
         public boolean containsElement(int position) {
             return ZodiacSign.CANCER.isInSign(position) || ZodiacSign.PISCES.isInSign(position) || ZodiacSign.SCORPIO.isInSign(position);

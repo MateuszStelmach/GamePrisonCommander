@@ -16,7 +16,7 @@ public class PrisonerStatistic {
                              ZodiacSignBalance zodiacSignBalance) {
         prisonerStat = new HashMap<>();
         for (CharacterQuality characterQuality : CharacterQuality.values()) {
-            prisonerStat.put(characterQuality, characterQuality.qualityStrentgh(elementBalance, heavenCelestial, houseBalance, zodiacSignBalance));
+            prisonerStat.put(characterQuality, characterQuality.qualityStrength(elementBalance, heavenCelestial, houseBalance, zodiacSignBalance));
         }
     }
 

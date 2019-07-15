@@ -149,7 +149,7 @@ public enum ZodiacSign {
         }
     },
 
-    AQUARIUS(Range.between(300, 329), CharacterQuality.EDUCTAION_POTENTIAL, FourElements.AIR) {
+    AQUARIUS(Range.between(300, 329), CharacterQuality.EDUCATION_POTENTIAL, FourElements.AIR) {
         @Override
         public boolean isInSign(int position) {
             return AQUARIUS.getDegree().contains(position);
@@ -164,7 +164,7 @@ public enum ZodiacSign {
         }
     },
 
-    PISCES(Range.between(330, 359), CharacterQuality.EMOTIONAL_RESPOSIVENESS, FourElements.WATER) {
+    PISCES(Range.between(330, 359), CharacterQuality.EMOTIONAL_SENSITIVITY, FourElements.WATER) {
         @Override
         public boolean isInSign(int position) {
             return PISCES.getDegree().contains(position);
