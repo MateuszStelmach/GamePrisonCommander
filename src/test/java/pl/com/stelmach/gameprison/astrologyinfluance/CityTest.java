@@ -1,10 +1,7 @@
-package pl.com.stelmach.gameprison.AstrologyInfuence;
-
-import pl.com.stelmach.gameprison.astrologyinfluance.City;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import static org.junit.Assert.*;
 
-import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import org.junit.Test;
 
 public class CityTest {

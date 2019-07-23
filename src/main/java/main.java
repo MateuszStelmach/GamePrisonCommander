@@ -1,12 +1,9 @@
 import cz.kibo.api.astrology.domain.Coordinates;
 import pl.com.stelmach.gameprison.astrologyinfluance.*;
 
-import pl.com.stelmach.gameprison.person.*;
-
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
-import pl.com.stelmach.gameprison.person.prisoner.PrisonerStatistic;
 
 import java.time.LocalDateTime;
 

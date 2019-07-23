@@ -1,4 +1,4 @@
-package pl.com.stelmach.gameprison.AstrologyInfuence;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 /*
     FIRST 38
     SECOND 67
@@ -28,9 +28,6 @@ import static org.junit.Assert.*;
 
 import cz.kibo.api.astrology.domain.Coordinates;
 import org.junit.Test;
-import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
-import pl.com.stelmach.gameprison.astrologyinfluance.City;
-import pl.com.stelmach.gameprison.astrologyinfluance.FourElements;
 
 import java.time.LocalDateTime;
 

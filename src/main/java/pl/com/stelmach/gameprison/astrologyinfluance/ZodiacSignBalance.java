@@ -1,4 +1,4 @@
-package pl.com.stelmach.gameprison.person;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import lombok.Getter;
 import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;

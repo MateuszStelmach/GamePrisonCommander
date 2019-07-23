@@ -1,13 +1,10 @@
-package pl.com.stelmach.gameprison.AstrologyInfuence;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
 import cz.kibo.api.astrology.domain.Coordinates;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
-import pl.com.stelmach.gameprison.astrologyinfluance.City;
-import pl.com.stelmach.gameprison.astrologyinfluance.Houses;
 
 import java.time.LocalDateTime;
 

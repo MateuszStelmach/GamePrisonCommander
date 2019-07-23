@@ -1,6 +1,5 @@
-package pl.com.stelmach.gameprison.AstrologyInfuence;
+package pl.com.stelmach.gameprison.astrologyinfluance;
 
-import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.time.LocalDateTime;
