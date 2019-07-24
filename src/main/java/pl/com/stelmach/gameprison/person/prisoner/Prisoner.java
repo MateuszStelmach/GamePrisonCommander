@@ -7,6 +7,7 @@ import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import lombok.Getter;
 import pl.com.stelmach.gameprison.person.Personality;
 
+
 @Getter
 public class Prisoner {
     private final int prisonNumber;
@@ -15,13 +16,16 @@ public class Prisoner {
     private City city;
     private Personality personality;
     @Setter
+    private int prisonCellNumber;
+    @Setter
     private PrisonerStatistic prisonerStatistic;
     @Setter
     private PrisonerRelation prisonerRelation;
     @Setter
     private PrisonerStatus status;
 
-    public Prisoner(int prisonNumber) {
+    public Prisoner(int prisonNumber, int prisonCellNumber) {
+        this.prisonCellNumber = prisonCellNumber;
         this.prisonNumber = prisonNumber;
         this.status = PrisonerStatus.REGULAR;
         this.city = GenerateData.generateCity();
