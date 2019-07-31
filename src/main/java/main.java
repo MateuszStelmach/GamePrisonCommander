@@ -4,6 +4,9 @@ import pl.com.stelmach.gameprison.astrologyinfluance.*;
 import cz.kibo.api.astrology.builder.TransitBuilder;
 
 import cz.kibo.api.astrology.domain.Transit;
+import pl.com.stelmach.gameprison.person.CharacterQuality;
+import pl.com.stelmach.gameprison.person.CharacterQualityBalance;
+import pl.com.stelmach.gameprison.person.Personality;
 
 import java.time.LocalDateTime;
 
@@ -94,6 +97,13 @@ public class main {
         HeavenCelestialBalance heavenCelestialBalance = new HeavenCelestialBalance(birthChartTest);
         for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
             System.out.println(heavenCelestial + " " + heavenCelestialBalance.getHeavenCelestialMap().get(heavenCelestial));
+        }
+
+        Personality personality = new Personality(elementBalance, houseBalance, heavenCelestialBalance, zodiacSignBalance1);
+        CharacterQualityBalance characterQualityBalance = new CharacterQualityBalance(personality);
+        for (CharacterQuality characterQuality : CharacterQuality.values()) {
+            System.out.println(characterQualityBalance.getCharacterQualityBalance().get(characterQuality) + " " +
+                    characterQuality);
         }
 
 

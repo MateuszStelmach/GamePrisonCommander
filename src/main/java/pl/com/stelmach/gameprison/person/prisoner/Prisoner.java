@@ -5,6 +5,7 @@ import pl.com.stelmach.gameprison.astrologyinfluance.BirthChart;
 import pl.com.stelmach.gameprison.astrologyinfluance.City;
 import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import lombok.Getter;
+import pl.com.stelmach.gameprison.person.CharacterQualityBalance;
 import pl.com.stelmach.gameprison.person.Personality;
 
 
@@ -18,7 +19,7 @@ public class Prisoner {
     @Setter
     private int prisonCellNumber;
     @Setter
-    private PrisonerStatistic prisonerStatistic;
+    private CharacterQualityBalance characterQualityBalance;
     @Setter
     private PrisonerRelation prisonerRelation;
     @Setter
