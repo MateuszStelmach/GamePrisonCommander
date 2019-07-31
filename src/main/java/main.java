@@ -91,6 +91,11 @@ public class main {
             System.out.println(zodiacSign + " " + zodiacSignBalance1.getZodiacSignBalance().get(zodiacSign));
         }
 
+        HeavenCelestialBalance heavenCelestialBalance = new HeavenCelestialBalance(birthChartTest);
+        for (HeavenCelestial heavenCelestial : HeavenCelestial.values()) {
+            System.out.println(heavenCelestial + " " + heavenCelestialBalance.getHeavenCelestialMap().get(heavenCelestial));
+        }
+
 
     }
 
