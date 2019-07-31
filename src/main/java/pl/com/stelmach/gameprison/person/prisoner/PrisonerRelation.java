@@ -6,5 +6,5 @@ import java.util.Map;
 
 @Getter
 public class PrisonerRelation {
-    private Map<Integer, Map<PrisonerRelation, Integer>> prisonerRelation;
+    private Map<PrisonerNumber, Map<PrisonerRelation, Integer>> prisonerRelKation;
 }

@@ -11,7 +11,7 @@ import pl.com.stelmach.gameprison.person.Personality;
 
 @Getter
 public class Prisoner {
-    private final int prisonNumber;
+    private final PrisonerNumber prisonNumber;
 
     private BirthChart birthChart;
     private City city;
@@ -27,7 +27,7 @@ public class Prisoner {
 
     public Prisoner(int prisonNumber, int prisonCellNumber) {
         this.prisonCellNumber = prisonCellNumber;
-        this.prisonNumber = prisonNumber;
+        this.prisonNumber = new PrisonerNumber(prisonNumber);
         this.status = PrisonerStatus.REGULAR;
         this.city = GenerateData.generateCity();
         this.birthChart = new BirthChart(this.city, GenerateData.generateBirthTime());
