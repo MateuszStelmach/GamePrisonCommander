@@ -102,7 +102,7 @@ public class main {
         Personality personality = new Personality(elementBalance, houseBalance, heavenCelestialBalance, zodiacSignBalance1);
         CharacterQualityBalance characterQualityBalance = new CharacterQualityBalance(personality);
         for (CharacterQuality characterQuality : CharacterQuality.values()) {
-            System.out.println(characterQualityBalance.getCharacterQualityBalance().get(characterQuality) + " " +
+            System.out.println(characterQualityBalance.getChQualityStrength(characterQuality) + " " +
                     characterQuality);
         }
 

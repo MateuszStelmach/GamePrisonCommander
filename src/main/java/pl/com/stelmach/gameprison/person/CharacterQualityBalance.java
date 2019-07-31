@@ -18,4 +18,9 @@ public class CharacterQualityBalance {
         }
 
     }
+
+    public int getChQualityStrength(CharacterQuality characterQuality) {
+        return characterQualityBalance.get(characterQuality);
+    }
+
 }
