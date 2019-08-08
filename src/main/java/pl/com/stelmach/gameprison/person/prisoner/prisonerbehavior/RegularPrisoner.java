@@ -1,4 +1,6 @@
-package pl.com.stelmach.gameprison.person.prisoner;
+package pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior;
+
+import pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior.Behavior;
 
 public class RegularPrisoner implements Behavior {
     @Override

@@ -1,4 +1,4 @@
-package pl.com.stelmach.gameprison.person.prisoner;
+package pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior;
 
 public interface Behavior {
     boolean sex(int sexRate);

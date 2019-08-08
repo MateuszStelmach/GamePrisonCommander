@@ -7,6 +7,10 @@ import pl.com.stelmach.gameprison.astrologyinfluance.GenerateData;
 import lombok.Getter;
 import pl.com.stelmach.gameprison.person.CharacterQualityBalance;
 import pl.com.stelmach.gameprison.person.Personality;
+import pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior.Behavior;
+import pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior.RegularPrisoner;
+import pl.com.stelmach.gameprison.person.prisoner.prisonerelation.PrisonerRelation;
+import pl.com.stelmach.gameprison.person.prisoner.prisonerelation.PrisonerStatus;
 
 
 @Getter
@@ -16,6 +20,8 @@ public class Prisoner {
     private BirthChart birthChart;
     private City city;
     private Personality personality;
+    @Setter
+    private Behavior prisonerBehavior;
     @Setter
     private int prisonCellNumber;
     @Setter
@@ -29,6 +35,7 @@ public class Prisoner {
         this.prisonCellNumber = prisonCellNumber;
         this.prisonNumber = new PrisonerNumber(prisonNumber);
         this.status = PrisonerStatus.REGULAR;
+        this.prisonerBehavior = new RegularPrisoner();
         this.city = GenerateData.generateCity();
         this.birthChart = new BirthChart(this.city, GenerateData.generateBirthTime());
     }

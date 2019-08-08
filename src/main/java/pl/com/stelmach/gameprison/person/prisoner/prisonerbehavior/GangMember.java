@@ -1,6 +1,8 @@
-package pl.com.stelmach.gameprison.person.prisoner;
+package pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior;
 
-public class TrashPrisoner implements Behavior {
+import pl.com.stelmach.gameprison.person.prisoner.prisonerbehavior.Behavior;
+
+public class GangMember  implements Behavior {
     @Override
     public boolean sex(int sexRate) {
         return false;
